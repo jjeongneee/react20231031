@@ -1,17 +1,15 @@
-import aage, { city } from "./component/MyElem";
-import MyContainer, { person, country } from "./component/MyBox";
-// alt + ctrl + o 로 안쓰는 import 정리
+import MyBox, { address } from "./component/MyBox";
+import MyElem, { address as myAddress } from "./component/MyElem";
+
+// as로 named export 값을 import할 때 별칭을 줄 수 있음
 
 function App() {
   return (
     <>
-      <h1>{city}</h1>
-      <h1>{aage}</h1>
-      <MyContainer />
-      <h1>
-        {person.age}, {person.name}
-      </h1>
-      <h1>{country}</h1>
+      <h1>{address}</h1>
+      <h1>{myAddress}</h1>
+      <MyElem />
+      <MyBox />
     </>
   );
 }

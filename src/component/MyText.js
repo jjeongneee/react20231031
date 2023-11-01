@@ -6,7 +6,6 @@ export function MyText() {
       {/* src/style/mystyle.module.css 파일 생성 */}
       {/* MyText.js에서 mystyle.module.css import 하기 */}
       <h1 className={css.error}>Lorem ipsum dolor sit amet.</h1>
-
     </div>
   );
 }

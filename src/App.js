@@ -1,22 +1,17 @@
-import {
-  MyBox,
-  MyContainer,
-  MyElem,
-  name,
-  address,
-  person,
-} from "./component/MyBox";
+import aage, { city } from "./component/MyElem";
+import MyContainer, { person, country } from "./component/MyBox";
+// alt + ctrl + o 로 안쓰는 import 정리
 
 function App() {
-  console.log("name", name);
-  console.log("address", address);
-  console.log("person", person);
-
   return (
     <>
-      <MyBox />
-      <MyElem />
+      <h1>{city}</h1>
+      <h1>{aage}</h1>
       <MyContainer />
+      <h1>
+        {person.age}, {person.name}
+      </h1>
+      <h1>{country}</h1>
     </>
   );
 }

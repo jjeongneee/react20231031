@@ -18,7 +18,7 @@
 .env.test.local
 .env.production.local
 
-npm-debug.log*
+npm-debug.log*npm i @chakra-ui/iconsnpm i @chakra-ui/icons
 yarn-debug.log*g
 yarn-error.log*
 

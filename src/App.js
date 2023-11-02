@@ -20,7 +20,7 @@ function App(props) {
         <Box w={"480px"}>
           <FormControl>
             <FormLabel>이름</FormLabel>
-            <Input />
+            <Input type="datetime-local" />
             <FormHelperText>띄어쓰기 없이 입력하세요.</FormHelperText>
           </FormControl>
         </Box>
@@ -29,7 +29,7 @@ function App(props) {
         <Box w="480px">
           <FormControl>
             <FormLabel>하나만 선택하세요.</FormLabel>
-            <RadioGroup>
+            <RadioGroup defaultValue={"value1"}>
               <Flex gap={5}>
                 <Radio value="value1">Lorem.</Radio>
                 <Radio value="value2">Lorem.</Radio>

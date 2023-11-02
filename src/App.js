@@ -1,51 +1,59 @@
-import { Button } from "@chakra-ui/react";
-import { ArrowRightIcon, EmailIcon } from "@chakra-ui/icons";
+import React from "react";
+import {
+  Box,
+  Center,
+  Checkbox,
+  CheckboxGroup,
+  Flex,
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  Input,
+  Radio,
+  RadioGroup,
+} from "@chakra-ui/react";
 
-function App() {
+function App(props) {
   return (
-    <>
-      <Button colorScheme="blue">Lorem.</Button>
-      <Button colorScheme="red">Lorem.</Button>
-      <Button colorScheme="yellow">Natus!</Button>
-      <Button colorScheme="orange">Rerum.</Button>
-      <Button colorScheme="teal" size={"sm"}>
-        Suscipit.
-      </Button>
-      <Button colorScheme="cyan" size={"lg"}>
-        Itaque.
-      </Button>
-      <Button colorScheme="messenger" variant={"outline"}>
-        Veritatis.
-      </Button>
-      <Button colorScheme="orange" variant="ghost">
-        Aliquid!
-      </Button>
-      <Button variant={"link"}>Odit?</Button>
-      <Button leftIcon={<EmailIcon />}>Mollitia.</Button>
-      <Button rightIcon={<ArrowRightIcon />}>Non!</Button>
-      <Button isLoading={true}>Quos.</Button>
-      <Button isLoading loadingText={"전송중"}>
-        Minima.
-      </Button>
-      <Button>Quae!</Button>
-      <Button>Iusto?</Button>
-      <Button>Dolor.</Button>
-      <Button>Placeat?</Button>
-      <Button>Quisquam!</Button>
-      <Button>Dignissimos!</Button>
-      <Button>Accusamus.</Button>
-      <Button>Cupiditate.</Button>
-      <Button>Libero?</Button>
-      <Button>Ratione.</Button>
-      <Button>Sed.</Button>
-      <Button>Odit.</Button>
-      <Button>Expedita.</Button>
-      <Button>Atque!</Button>
-      <Button>Ipsa.</Button>
-      <Button>Cum?</Button>
-      <Button>Totam?</Button>
-      <Button>Sunt.</Button>
-    </>
+    <div>
+      <Center>
+        <Box w={"480px"}>
+          <FormControl>
+            <FormLabel>이름</FormLabel>
+            <Input />
+            <FormHelperText>띄어쓰기 없이 입력하세요.</FormHelperText>
+          </FormControl>
+        </Box>
+      </Center>
+      <Center mt={5}>
+        <Box w="480px">
+          <FormControl>
+            <FormLabel>하나만 선택하세요.</FormLabel>
+            <RadioGroup>
+              <Flex gap={5}>
+                <Radio value="value1">Lorem.</Radio>
+                <Radio value="value2">Lorem.</Radio>
+                <Radio value="value3">Lorem.</Radio>
+                <Radio value="value4">Lorem.</Radio>
+              </Flex>
+            </RadioGroup>
+          </FormControl>
+        </Box>
+      </Center>
+      <Center>
+        <Box w="480px">
+          <FormControl>
+            <CheckboxGroup>
+              <Flex gap={5}>
+                <Checkbox colorScheme="orange">Lorem.</Checkbox>
+                <Checkbox colorScheme="green">Commodi.</Checkbox>
+                <Checkbox colorScheme="purple">Voluptatem.</Checkbox>
+              </Flex>
+            </CheckboxGroup>
+          </FormControl>
+        </Box>
+      </Center>
+    </div>
   );
 }
 

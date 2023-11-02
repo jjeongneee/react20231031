@@ -1,40 +1,46 @@
 import {
-  Box,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Flex,
-  Heading,
   Button,
-  SimpleGrid,
-  Tbody,
-  Table,
-  Thead,
-  Tr,
-  Th,
-  Td,
-  Center,
-  Circle,
-  Square,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
-import { PhoneIcon, SunIcon } from "@chakra-ui/icons";
 
 function App() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
-      <Center bg={"red.100"} h={"200px"}>
-        <Square bg={"blue.100"} w={"100px"} h={"100px"}>
-          <SunIcon />
-        </Square>
-      </Center>
+      <Button onClick={onOpen}>모달 열기</Button>
 
-      <Center bg={"red.200"} h={"200px"}>
-        <Circle bg={"blue.200"} w={"100px"} h={"100px"}>
-          <PhoneIcon />
-        </Circle>
-      </Center>
+      <Modal
+        closeOnOverlayClick={false}
+        isOpen={isOpen}
+        onClose={onClose}
+        isCentered
+        motionPreset="slideInBottom"
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>모달의 제목</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+            aperiam, architecto aspernatur dolorum ex exercitationem, expedita
+            fuga laborum magni molestiae officiis optio porro possimus quae quod
+            vitae voluptatem! Ipsum, officia!
+          </ModalBody>
+          <ModalFooter>
+            <Button colorScheme="blue" onClick={onClose}>
+              닫기
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </>
   );
 }

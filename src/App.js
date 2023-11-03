@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 
 function App(props) {
   const [number, setNumber] = useState(0);
@@ -15,8 +15,14 @@ function App(props) {
   return (
     <div>
       <input type="number" value={number} />
-      <Button onClick={handlePlusButtonClick}>+</Button>
-      <Button onClick={handleMinusButtonClick}>-</Button>
+      <Box>
+        <Button onClick={handlePlusButtonClick}>+</Button>
+        <Button onClick={handleMinusButtonClick}>-</Button>
+      </Box>
+      <Box>
+        <Button onClick={() => setNumber(number + 1)}>+</Button>
+        <Button onClick={() => setNumber(number - 1)}>-</Button>
+      </Box>
     </div>
   );
 }

@@ -1,27 +1,27 @@
 import React from "react";
 import { Button } from "@chakra-ui/react";
 
-function MyComp({ to, someProp }) {
-  someProp();
-  return (
-    <>
-      <div>
-        <a href={to[0]}>link!!!</a>
-      </div>
-      <div>
-        <Button onClick={someProp}>버튼</Button>
-      </div>
-    </>
-  );
-}
-
 function App(props) {
-  function func1() {
-    console.log("func1 실행됨");
+  // 함수명 작성 관습
+  // handle 이벤트명
+  function handleClick() {
+    console.log("second");
+  }
+
+  function handleMouseEnter() {
+    console.log("third");
+  }
+
+  function handleMouseLeave() {
+    console.log("4th");
   }
   return (
     <div>
-      <MyComp to={["https://www.naver.com"]} someProp={func1}></MyComp>
+      <Button onClick={() => console.log("first")}>버튼1</Button>
+      <Button onClick={handleClick}>버튼2</Button>
+      <Button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        버튼3
+      </Button>
     </div>
   );
 }

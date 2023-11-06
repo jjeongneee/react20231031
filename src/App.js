@@ -1,5 +1,47 @@
-function App() {
-  return <></>;
+import { Box, Button, Input, ListItem, UnorderedList } from "@chakra-ui/react";
+import { useState } from "react";
+
+function App(props) {
+  // 필요한 코드들 작성
+
+  const [text, setText] = useState("");
+  const [items, setItems] = useState([]);
+
+  function handleButtonClick() {
+    setItems([...items, text]);
+    setText("");
+  }
+
+  function handleRemoveButtonClick(index) {
+    setItems(items.filter((item, i) => i != index));
+  }
+
+  return (
+    <>
+      <Box>
+        <Input value={text} onChange={(e) => setText(e.target.value)}></Input>
+        <Button colorScheme="blue" onClick={handleButtonClick}>
+          추가
+        </Button>
+      </Box>
+      <Box>
+        <UnorderedList>
+          {items.map((item, index) => (
+            <ListItem key={index}>
+              {item}
+              {""}
+              <Button
+                colorScheme="red"
+                onClick={() => handleRemoveButtonClick(index)}
+              >
+                지우기
+              </Button>
+            </ListItem>
+          ))}
+        </UnorderedList>
+      </Box>
+    </>
+  );
 }
 
 export default App;

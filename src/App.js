@@ -1,33 +1,42 @@
-import React, { useState } from "react";
-import { Box, Button, Text } from "@chakra-ui/react";
+import React from "react";
+import { Box, List, ListItem } from "@chakra-ui/react";
 
 function App(props) {
-  // set... 메소드 상태 변경할 수 있음
-  // 상태가 같은 지 아닌지 판단해서 re-render 결정함
+  const arr = ["pizza", "돈까스", "햄버거", "김치찌개"];
+  const arr2 = ["손흥민", "이강인", "김민재"];
+  const arr3 = ["라떼", "에스프레소", "카푸치노"];
+  const arr4 = [
+    { id: 0, name: "라떼" },
+    { id: 1, name: "에스프레소" },
+    { id: 2, name: "카푸치노" },
+  ];
 
-  const [number, setNumber] = useState(0);
-  const [numberObject, setNumberObject] = useState({ number: 0 });
-
-  function handelNumberObjectChange() {
-    // 이렇게 사용하면 안됨
-    // numberObject.number = numberObject.number + 1;
-    // setNumberObject(numberObject);
-
-    // 복사해서 써야함
-    const newNumberObject = { ...numberObject };
-    newNumberObject.number = newNumberObject.number + 1;
-    setNumberObject(newNumberObject);
-  }
+  const listItems = arr.map((item, index) => (
+    <ListItem key={index}>{item}</ListItem>
+  ));
 
   return (
     <div>
-      <Box>
-        <Button onClick={() => setNumber(number + 1)}>number 변경</Button>
-        <Text>{number}</Text>
+      <Box mb={3}>
+        <List>{listItems}</List>
       </Box>
-      <Box>
-        <Button onClick={handelNumberObjectChange}>number 객체 변경</Button>
-        <Text>{numberObject.number}</Text>
+
+      <Box mb={3}>
+        <List>
+          {/*  손흥민, 이강인, 김민재
+           */}
+          {arr2.map((e, index) => (
+            <ListItem key={index}>{e}</ListItem>
+          ))}
+        </List>
+      </Box>
+      <Box mb={3}>
+        <List>
+          {/*  세번째 배열들이 ListItem으로 출력되도록 */}
+          {arr3.map((e, i) => (
+            <ListItem key={i}>{e}</ListItem>
+          ))}
+        </List>
       </Box>
     </div>
   );

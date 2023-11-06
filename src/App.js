@@ -8,11 +8,20 @@ function App(props) {
   const [items, setItems] = useState([]);
 
   function handleButtonClick() {
-    setItems([...items, text]);
+    // setItems([...items, text]);
+
+    const nextItems = [...items];
+    nextItems.push(text);
+
+    setItems(nextItems);
   }
 
   function handleRemoveButtonClick(index) {
-    setItems(items.filter((item, i) => i != index));
+    // setItems(items.filter((item, i) => i != index));
+    const nextItems = [...items];
+    nextItems.splice(index, 1);
+
+    setItems(nextItems);
   }
 
   return (

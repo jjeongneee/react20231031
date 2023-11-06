@@ -9,7 +9,6 @@ function App(props) {
 
   function handleButtonClick() {
     setItems([...items, text]);
-    setText("");
   }
 
   function handleRemoveButtonClick(index) {

@@ -12,8 +12,15 @@ function App(props) {
     });
   }
 
-  function handleDoneButton(id) {
-    console.log(id);
+  // js array element find라고 검색해서 찾기
+  function handleDoneButtonClick(id) {
+    // console.log(id);
+    // console.log(items);
+
+    updateItems((draft) => {
+      const target = draft.find((elem) => elem.id === id);
+      target.done = true;
+    });
   }
 
   return (
@@ -29,8 +36,10 @@ function App(props) {
               key={item.id}
               textDecoration={item.done ? "line-through" : "none"}
             >
-              {item.text}{" "}
-              <Button onClick={() => handleDoneButton(item.id)}>완료</Button>
+              {item.text}
+              <Button onClick={() => handleDoneButtonClick(item.id)}>
+                완료
+              </Button>
             </ListItem>
           ))}
         </UnorderedList>
